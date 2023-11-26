@@ -1,10 +1,10 @@
-#import sys
+import sys
 import re
 
-#file = sys.argv[1]
+file = sys.argv[1]
 sequencias = {}  #Dicionário com o nome do gene e o seu conteúdo
 codons_frames = {}
-with open("Python_08.fasta") as fasta:
+with open(file) as fasta:
     geneID = ""
     for linha in fasta:
         linha = linha.rstrip()
