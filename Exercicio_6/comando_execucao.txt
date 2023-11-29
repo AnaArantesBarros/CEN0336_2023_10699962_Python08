@@ -1,0 +1,2 @@
+py python_ex6.py Python_08.fasta
+
