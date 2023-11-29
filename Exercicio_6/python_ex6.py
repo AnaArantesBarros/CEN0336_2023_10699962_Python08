@@ -1,7 +1,7 @@
-#import sys
+import sys
 import re
 
-#file = sys.argv[1]
+file = sys.argv[1]
 sequencias = {}  # Dictionary with gene names and their content
 codons_frames = {}
 
@@ -29,7 +29,7 @@ translation_table = {
     'TAA': '*', 'TGA': '*', 'TAG': '*'
 }
 
-with open("Python_08.fasta") as fasta:
+with open(file) as fasta:
     geneID = ""
     protein_frames = {}  # Fix: initialize protein_frames here
     for linha in fasta:
@@ -72,7 +72,7 @@ with open("Python_08.translated.aa", "w") as aa_output:
             aa_output.write(headline)
             aa_output.write(protein + "\n")
 
-with open("Python_08.translated-longest.txt", "w") as longest_aa_output:
+with open("Python_08.translated-longest.aa", "w") as longest_aa_output:
     for geneID in protein_frames.keys():
         longestProtein = ""
         longestFrame = ""
@@ -82,6 +82,6 @@ with open("Python_08.translated-longest.txt", "w") as longest_aa_output:
                 if len(i) > len(longestProtein):
                     longestProtein = i
                     longestFrame = frame
-        longest_aa_output.write(f">{geneID}_{longestFrame}\n")
+        longest_aa_output.write(f">{longestFrame}\n")
         longest_aa_output.write(longestProtein + "\n")
 
