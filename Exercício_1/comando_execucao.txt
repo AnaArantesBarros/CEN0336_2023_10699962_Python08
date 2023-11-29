@@ -1,1 +1,1 @@
-py python8_ex1.py Python_08.fasta
+py Python08_1.py Python_08.fasta
